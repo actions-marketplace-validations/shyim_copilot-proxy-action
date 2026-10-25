@@ -1,0 +1,30 @@
+name: Copilot Proxy Action
+description: Start a loopback OpenAI-compatible proxy backed by the Actions Copilot token
+author: shyim
+branding:
+  icon: radio
+  color: purple
+inputs:
+  token:
+    description: GitHub Actions token with copilot-requests write permission
+    default: ${{ github.token }}
+  log-models:
+    description: Log model IDs, policy state, and endpoints at startup
+    default: 'true'
+  port:
+    description: Loopback port; 0 selects an available port
+    default: '0'
+outputs:
+  base-url:
+    description: OpenAI-compatible base URL, including /v1
+  usage-file:
+    description: JSON usage report path, updated after each request
+  usage-url:
+    description: Local URL for the current JSON usage report
+  pid:
+    description: Proxy process ID
+runs:
+  using: node24
+  main: src/start.cjs
+  post: src/stop.cjs
+  post-if: always()

@@ -1,0 +1,13 @@
+{
+  "name": "copilot-proxy-action",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A dependency-free GitHub Action exposing Copilot through a local API proxy with usage reporting",
+  "license": "MIT",
+  "engines": { "node": ">=24" },
+  "repository": { "type": "git", "url": "https://github.com/shyim/copilot-proxy-action.git" },
+  "scripts": {
+    "check": "node scripts/check.cjs",
+    "test": "node --test test/*.test.cjs"
+  }
+}

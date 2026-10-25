@@ -1,0 +1,32 @@
+name: Bug report
+description: Report a proxy or action problem
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal workflow and reproduction
+      description: Remove tokens, private code, prompts, and account details.
+      render: yaml
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Action version or commit
+    validations:
+      required: true
+  - type: input
+    id: runner
+    attributes:
+      label: Runner OS and hosted/self-hosted
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant sanitized logs
+      render: text
